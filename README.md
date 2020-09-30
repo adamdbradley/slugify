@@ -79,7 +79,8 @@ Trigger a haptics "impact" feedback
 
 **Returns:**  Promise<[`HapticsImpact`](#hapticsimpact)>
 
---------------------------
+--------------------
+
 
 ### notification
 
@@ -95,7 +96,8 @@ Trigger a haptics "notification" feedback
 
 **Returns:**  Promise<`string` \| `number`>
 
---------------------------
+--------------------
+
 
 ### vibrate
 
@@ -111,7 +113,8 @@ Vibrate the device
 
 **Returns:**  Promise<`number`>
 
---------------------------
+--------------------
+
 
 ### selectionStart
 
@@ -127,30 +130,37 @@ Trigger a selection started haptic hint
 
 **Returns:**  Promise<`void`>
 
+--------------------
+
+
 ### Interfaces
 
 
 #### HapticsImpact
 
 
---------------------------
+--------------------
 
 
 #### HapticsImpactOptions
 
 
---------------------------
+--------------------
 
 
 #### HapticsNotificationOptions
 
 
---------------------------
+--------------------
 
 
 #### VibrateOptions
 
 
-### Types
+--------------------
+
+
+### Enums
+
 
 <!--DOCGEN_API_END-->
