@@ -8,6 +8,8 @@ The Haptics API provides physical feedback to the user through touch or vibratio
 * [notification()](#notification)
 * [vibrate()](#vibrate)
 * [selectionStart()](#selectionstart)
+* [Interfaces](#interfaces)
+* [Enums](#enums)
 <!--DOCGEN_INDEX_END-->
 
 ## Android Notes
@@ -72,12 +74,12 @@ impact(options: HapticsImpactOptions, x?: number | undefined) => Promise<Haptics
 
 Trigger a haptics "impact" feedback
 
-| Param       | Type                                            | Description        |
-|-------------|-------------------------------------------------|--------------------|
-| **options** | [`HapticsImpactOptions`](#hapticsimpactoptions) | The impact options |
-| **x**       | `number`                                        |                    |
+| Param       | Type                                          | Description        |
+|-------------|-----------------------------------------------|--------------------|
+| **options** | [HapticsImpactOptions](#hapticsimpactoptions) | The impact options |
+| **x**       | number                                        |                    |
 
-**Returns:**  Promise<[`HapticsImpact`](#hapticsimpact)>
+**Returns:**  Promise<[HapticsImpact](#hapticsimpact)>
 
 --------------------
 
@@ -90,11 +92,11 @@ notification(options?: HapticsNotificationOptions | undefined) => Promise<string
 
 Trigger a haptics "notification" feedback
 
-| Param       | Type                                                        |
-|-------------|-------------------------------------------------------------|
-| **options** | [`HapticsNotificationOptions`](#hapticsnotificationoptions) |
+| Param       | Type                                                      |
+|-------------|-----------------------------------------------------------|
+| **options** | [HapticsNotificationOptions](#hapticsnotificationoptions) |
 
-**Returns:**  Promise<`string` \| `number`>
+**Returns:**  Promise<string | number>
 
 --------------------
 
@@ -107,11 +109,11 @@ vibrate(options?: VibrateOptions | undefined) => Promise<number>
 
 Vibrate the device
 
-| Param       | Type                                |
-|-------------|-------------------------------------|
-| **options** | [`VibrateOptions`](#vibrateoptions) |
+| Param       | Type                              |
+|-------------|-----------------------------------|
+| **options** | [VibrateOptions](#vibrateoptions) |
 
-**Returns:**  Promise<`number`>
+**Returns:**  Promise<number>
 
 --------------------
 
@@ -124,11 +126,11 @@ selectionStart(value: number | string) => Promise<void>
 
 Trigger a selection started haptic hint
 
-| Param     | Type                 |
-|-----------|----------------------|
-| **value** | `string` \| `number` |
+| Param     | Type             |
+|-----------|------------------|
+| **value** | string \| number |
 
-**Returns:**  Promise<`void`>
+**Returns:**  Promise<void>
 
 --------------------
 
