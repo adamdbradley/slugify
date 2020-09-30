@@ -1,68 +1,167 @@
-# @capacitor/docgen
+---
+title: Haptics
+description: Haptics API
+contributors:
+  - mlynch
+  - jcesarmobile
+---
 
-Docs Readme Markdown and JSON Generator for Capacitor Plugins.
+<plugin-platforms platforms="ios,android"></plugin-platforms>
+
+# Haptics
+
+The Haptics API provides physical feedback to the user through touch or vibration.
+
+<!--DOCGEN_INDEX_START-->
+* [impact()](#impact)
+* [notification()](#notification)
+* [vibrate()](#vibrate)
+* [selectionStart()](#selectionstart)
+<!--DOCGEN_INDEX_END-->
+
+## Android Notes
+
+To use vibration, you must add this permission to your `AndroidManifest.xml` file:
+
+```xml
+<uses-permission android:name="android.permission.VIBRATE" />
+```
+
+## Example
+
+```typescript
+import {
+  Plugins,
+  HapticsImpactStyle
+} from '@capacitor/core';
+
+const { Haptics } = Plugins;
+
+export class HapticsExample {
+  hapticsImpact(style = HapticsImpactStyle.Heavy) {
+    Haptics.impact({
+      style: style
+    });
+  }
+
+  hapticsImpactMedium(style) {
+    this.hapticsImpact(HapticsImpactStyle.Medium);
+  }
+
+  hapticsImpactLight(style) {
+    this.hapticsImpact(HapticsImpactStyle.Light);
+  }
+
+  hapticsVibrate() {
+    Haptics.vibrate();
+  }
+
+  hapticsSelectionStart() {
+    Haptics.selectionStart();
+  }
+
+  hapticsSelectionChanged() {
+    Haptics.selectionChanged();
+  }
+
+  hapticsSelectionEnd() {
+    Haptics.selectionEnd();
+  }
+}
+```
+
+<!--DOCGEN_API_START-->
+## API
 
 
- ### impact
+### impact
 
- ```typescript
- impact(options: HapticsImpactOptions, x?: number | undefined) => Promise<HapticsImpact>
- ```
+```typescript
+impact(options: HapticsImpactOptions, x?: number | undefined) => Promise<HapticsImpact>
+```
 
- Trigger a haptics "impact" feedback
+Trigger a haptics "impact" feedback
 
- | Param       | Type                                            | Description        |
- |-------------|-------------------------------------------------|--------------------|
- | **options** | [`HapticsImpactOptions`](#hapticsimpactoptions) | The impact options |
- | **x**       | `number`                                        |                    |
+| Param       | Type                                            | Description        |
+|-------------|-------------------------------------------------|--------------------|
+| **options** | [`HapticsImpactOptions`](#hapticsimpactoptions) | The impact options |
+| **x**       | `number`                                        |                    |
 
- **Returns:**  Promise<[`HapticsImpact`](#hapticsimpact)>
+**Returns:**  Promise<[`HapticsImpact`](#hapticsimpact)>
 
------------------
-
- ### notification
-
- ```typescript
- notification(options?: HapticsNotificationOptions | undefined) => Promise<string | number>
- ```
-
- Trigger a haptics "notification" feedback
-
- | Param       | Type                                                        |
- |-------------|-------------------------------------------------------------|
- | **options** | [`HapticsNotificationOptions`](#hapticsnotificationoptions) |
-
- **Returns:**  Promise<`string` \| `number`>
+------------------------
 
 
- ### vibrate
+### notification
 
- ```typescript
- vibrate(options?: VibrateOptions | undefined) => Promise<number>
- ```
+```typescript
+notification(options?: HapticsNotificationOptions | undefined) => Promise<string | number>
+```
 
- Vibrate the device
+Trigger a haptics "notification" feedback
 
- | Param       | Type                                |
- |-------------|-------------------------------------|
- | **options** | [`VibrateOptions`](#vibrateoptions) |
+| Param       | Type                                                        |
+|-------------|-------------------------------------------------------------|
+| **options** | [`HapticsNotificationOptions`](#hapticsnotificationoptions) |
 
- **Returns:**  Promise<`number`>
+**Returns:**  Promise<`string` \| `number`>
+
+------------------------
 
 
- ### selectionStart
+### vibrate
 
- ```typescript
- selectionStart(value: number | string) => Promise<void>
- ```
+```typescript
+vibrate(options?: VibrateOptions | undefined) => Promise<number>
+```
 
- Trigger a selection started haptic hint
+Vibrate the device
 
- | Param     | Type                 |
- |-----------|----------------------|
- | **value** | `string` \| `number` |
+| Param       | Type                                |
+|-------------|-------------------------------------|
+| **options** | [`VibrateOptions`](#vibrateoptions) |
 
- | Returns   |
- |-----------|
- | Promise<`void`> |
+**Returns:**  Promise<`number`>
 
+------------------------
+
+
+### selectionStart
+
+```typescript
+selectionStart(value: number | string) => Promise<void>
+```
+
+Trigger a selection started haptic hint
+
+| Param     | Type                 |
+|-----------|----------------------|
+| **value** | `string` \| `number` |
+
+**Returns:**  Promise<`void`>
+
+------------------------
+
+## Types
+
+
+
+### HapticsImpact
+
+
+
+### HapticsImpactOptions
+
+
+
+### HapticsNotificationOptions
+
+
+
+### VibrateOptions
+
+
+
+
+
+<!--DOCGEN_API_END-->
