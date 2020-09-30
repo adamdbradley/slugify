@@ -1,12 +1,3 @@
----
-title: Haptics
-description: Haptics API
-contributors:
-  - mlynch
-  - jcesarmobile
----
-
-<plugin-platforms platforms="ios,android"></plugin-platforms>
 
 # Haptics
 
@@ -73,7 +64,6 @@ export class HapticsExample {
 <!--DOCGEN_API_START-->
 ## API
 
-
 ### impact
 
 ```typescript
@@ -89,8 +79,7 @@ Trigger a haptics "impact" feedback
 
 **Returns:**  Promise<[`HapticsImpact`](#hapticsimpact)>
 
-------------------------
-
+--------------------------
 
 ### notification
 
@@ -106,8 +95,7 @@ Trigger a haptics "notification" feedback
 
 **Returns:**  Promise<`string` \| `number`>
 
-------------------------
-
+--------------------------
 
 ### vibrate
 
@@ -123,8 +111,7 @@ Vibrate the device
 
 **Returns:**  Promise<`number`>
 
-------------------------
-
+--------------------------
 
 ### selectionStart
 
@@ -140,28 +127,30 @@ Trigger a selection started haptic hint
 
 **Returns:**  Promise<`void`>
 
-------------------------
-
-## Types
+### Interfaces
 
 
-
-### HapticsImpact
-
+#### HapticsImpact
 
 
-### HapticsImpactOptions
+--------------------------
 
 
-
-### HapticsNotificationOptions
-
+#### HapticsImpactOptions
 
 
-### VibrateOptions
+--------------------------
 
 
+#### HapticsNotificationOptions
 
 
+--------------------------
+
+
+#### VibrateOptions
+
+
+### Types
 
 <!--DOCGEN_API_END-->
